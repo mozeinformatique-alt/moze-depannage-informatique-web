@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mozé Dépannage Informatique | Réparation PC, Réseau & Électronique (49610)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                            dark: '#0f172a',
+                            slate: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(20, 184, 166, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-white">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-teal-400 flex items-center justify-center text-slate-950 font-bold shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-laptop-medical text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-lg font-bold tracking-tight text-white block leading-tight">MOZÉ DÉPANNAGE</span>
+                    <span class="text-xs font-semibold text-brand-500 tracking-wider uppercase block">INFORMATIQUE</span>
+                </div>
+            </a>
+
+            <!-- Nav Links (Desktop) -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#services" class="hover:text-brand-500 transition-colors">Services</a>
+                <a href="#tarifs" class="hover:text-brand-500 transition-colors">Tarifs</a>
+                <a href="#zone" class="hover:text-brand-500 transition-colors">Zone d'intervention</a>
+                <a href="#a-propos" class="hover:text-brand-500 transition-colors">À propos</a>
+            </nav>
+
+            <!-- Action CTA -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="tel:0600000000" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm transition-all border border-slate-700">
+                    <i class="fa-solid fa-phone text-brand-500"></i>
+                    <span>06 XX XX XX XX</span>
+                </a>
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-500 to-teal-500 hover:from-brand-600 hover:to-teal-600 text-slate-950 font-semibold text-sm shadow-md transition-all hover:shadow-brand-500/25">
+                    Devis Gratuit
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" class="block px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800 text-base font-medium">Services</a>
+            <a href="#tarifs" class="block px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800 text-base font-medium">Tarifs</a>
+            <a href="#zone" class="block px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800 text-base font-medium">Zone d'intervention</a>
+            <a href="#a-propos" class="block px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800 text-base font-medium">À propos</a>
+            <div class="pt-4 flex flex-col gap-2">
+                <a href="tel:0600000000" class="w-full text-center py-2.5 rounded-xl bg-slate-800 text-white font-medium text-sm">
+                    <i class="fa-solid fa-phone text-brand-500 mr-2"></i> Appeler Noé
+                </a>
+                <a href="#contact" class="w-full text-center py-2.5 rounded-xl bg-brand-500 text-slate-950 font-semibold text-sm">
+                    Demander un devis
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <!-- Glow accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-brand-500 text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        Intervention à domicile & en atelier à Mozé (49610)
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-none">
+                        Dépannage PC, Réseau & <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-teal-300">Électronique</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Votre ordinateur ne démarre plus ? Votre Wi-Fi rame ? Un composant électronique à réparer ? Noé intervient directement chez vous autour de **Mozé-sur-Louet** ou prend en charge votre matériel en atelier.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-500 to-teal-500 hover:from-brand-600 hover:to-teal-600 text-slate-950 font-bold shadow-lg shadow-brand-500/20 transition-all hover:scale-[1.02]">
+                            <i class="fa-solid fa-wrench"></i> Demander une réparation
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium border border-slate-700 transition-all">
+                            <i class="fa-brands fa-instagram text-pink-500 text-lg"></i>
+                            <span>@moze.depannage.info</span>
+                        </a>
+                    </div>
+
+                    <!-- Badges de réassurance -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-800/80 max-w-lg mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <span class="block text-xl font-bold text-white">49610</span>
+                            <span class="text-xs text-slate-400">Proximité locale</span>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <span class="block text-xl font-bold text-white">Bac Pro CIEL</span>
+                            <span class="text-xs text-slate-400">Expertise technique</span>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <span class="block text-xl font-bold text-white">Rapide</span>
+                            <span class="text-xs text-slate-400">Devis sous 24h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card de présentation de l'expert -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-2xl p-6 md:p-8 shadow-2xl relative glow-effect">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-500 to-teal-300 p-0.5 shadow-md">
+                                <div class="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center">
+                                    <i class="fa-solid fa-microchip text-2xl text-brand-500"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Noé Banchereau</h3>
+                                <p class="text-sm text-brand-500 font-medium">Technicien Informatique & Réseau</p>
+                                <p class="text-xs text-slate-400">Étudiant en Bac Pro CIEL</p>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-slate-300 mb-6">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-500"></i>
+                                <span>Intervention à domicile rapide</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-500"></i>
+                                <span>Atelier de réparation équipé à Mozé</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-500"></i>
+                                <span>Diagnostics clairs et transparents</span>
+                            </li>
+                        </ul>
+
+                        <div class="bg-slate-900/90 rounded-xl p-4 border border-slate-800 text-xs text-slate-400 flex items-start gap-3">
+                            <i class="fa-solid fa-shield-halved text-brand-500 text-base mt-0.5"></i>
+                            <span>Service pour particuliers et petits professionnels dans tout le secteur du Louet et de l'Aubance.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-slate-900/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Compétences & Interventions</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Services de Réparation & Dépannage</p>
+                <p class="text-slate-400 mt-4">Une prise en charge complète pour tous vos appareils numériques et réseaux domestiques.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Service 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-500/50 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl mb-5 group-hover:bg-brand-500 group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Dépannage PC & Laptop</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Suppression de virus, réinstallation Windows/Mac, changement d'écran, remplacement de batterie, nettoyage matériel et boost SSD.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-500/50 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl mb-5 group-hover:bg-brand-500 group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Réseaux & Wi-Fi</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Configuration de box internet, optimisation du réseau Wi-Fi dans toute la maison, installation de répéteurs et câblage Ethernet RJ45.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-500/50 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl mb-5 group-hover:bg-brand-500 group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-plug"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Électronique & Soudures</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Micro-soudure sur cartes mères, réparation de connecteurs de charge, remplacement de composants défectueux et diagnostic carte.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-500/50 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl mb-5 group-hover:bg-brand-500 group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-house-laptop"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Domicile & Atelier</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Déplacement directement chez vous dans tout le secteur 49610 ou prise en charge rapide de votre matériel dans mon atelier à Mozé.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="tarifs" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Transparence totale</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Tarifs Indicatifs</p>
+                <p class="text-slate-400 mt-4">Pas de mauvaises surprises. Un devis est toujours validé avant toute intervention.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Tarif 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-semibold text-brand-500 uppercase tracking-wider block mb-2">Diagnostic</span>
+                        <h3 class="text-2xl font-bold text-white mb-4">Analyse & Devis</h3>
+                        <div class="text-4xl font-extrabold text-white mb-6">15€ <span class="text-sm font-normal text-slate-400">/ appareil</span></div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Recherche de panne</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Déduit du montant si réparation</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Conseil personnalisé</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="w-full text-center py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm transition-colors">Demander</a>
+                </div>
+
+                <!-- Tarif 2 (Populaire) -->
+                <div class="bg-slate-900 border-2 border-brand-500 rounded-2xl p-6 flex flex-col justify-between relative shadow-xl shadow-brand-500/10">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-500 text-slate-950 px-3 py-1 rounded-full text-xs font-bold uppercase">
+                        Plus demandé
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-brand-500 uppercase tracking-wider block mb-2">Dépannage classique</span>
+                        <h3 class="text-2xl font-bold text-white mb-4">Intervention Standard</h3>
+                        <div class="text-4xl font-extrabold text-white mb-6">35€ <span class="text-sm font-normal text-slate-400">/ heure</span></div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Nettoyage virus / lenteurs</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Configuration Wi-Fi / Imprimante</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Formatage & réinstallation</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="w-full text-center py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-sm transition-colors">Réserver une heure</a>
+                </div>
+
+                <!-- Tarif 3 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-semibold text-brand-500 uppercase tracking-wider block mb-2">Électronique & Réseau</span>
+                        <h3 class="text-2xl font-bold text-white mb-4">Soudure & Projets</h3>
+                        <div class="text-4xl font-extrabold text-white mb-6">Sur Devis</div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Micro-soudure électronique</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Montage PC sur-mesure</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Installation réseau complète</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="w-full text-center py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm transition-colors">Demander un devis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="zone" class="py-20 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Proximité</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">Zone d'intervention autour de Mozé-sur-Louet (49610)</h3>
+                    <p class="text-slate-400 mb-6">
+                        Je me déplace directement chez vous dans un rayon d'environ **15 à 20 km** autour de Mozé-sur-Louet pour le dépannage informatique et la configuration réseau.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm text-slate-300">
+                        <div class="flex items-center gap-2 bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-location-dot text-brand-500"></i> Mozé-sur-Louet
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-location-dot text-brand-500"></i> Soulaines
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-location-dot text-brand-500"></i> Mûrs-Erigné
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-location-dot text-brand-500"></i> Brissac
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-location-dot text-brand-500"></i> St-Melaine
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-location-dot text-brand-500"></i> Denée
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-location-dot text-brand-500"></i> Rochefort
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-location-dot text-brand-500"></i> Les Ponts-de-Cé
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-location-dot text-brand-500"></i> Thouarcé
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 relative">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-500 text-xl">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Frais de déplacement</h4>
+                            <p class="text-sm text-slate-400">Transparents et réduits</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex justify-between py-2 border-b border-slate-800">
+                            <span>Mozé-sur-Louet (49610) :</span>
+                            <span class="text-brand-500 font-bold">GRATUIT</span>
+                        </li>
+                        <li class="flex justify-between py-2 border-b border-slate-800">
+                            <span>Moins de 10 km autour :</span>
+                            <span class="text-white font-bold">5 €</span>
+                        </li>
+                        <li class="flex justify-between py-2">
+                            <span>De 10 à 20 km :</span>
+                            <span class="text-white font-bold">10 €</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Contactez-moi</h2>
+                <p class="text-3xl font-extrabold text-white">Demande de Devis ou Rendez-vous</p>
+                <p class="text-slate-400 mt-2">Réponse rapide garantie sous 24h maximum.</p>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Votre Nom / Prénom</label>
+                            <input type="text" required placeholder="Jean Dupont" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Téléphone</label>
+                            <input type="tel" required placeholder="06 12 34 56 78" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Ville de résidence</label>
+                        <input type="text" required placeholder="Ex: Mozé-sur-Louet, Mûrs-Erigné..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Type d'intervention recherchée</label>
+                        <select class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500">
+                            <option>Réparation PC portable / fixe</option>
+                            <option>Problème réseau / Wi-Fi</option>
+                            <option>Soudure / Électronique</option>
+                            <option>Intervention à domicile</option>
+                            <option>Autre demande</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Description du problème</label>
+                        <textarea rows="4" required placeholder="Explication rapide de la panne ou du besoin..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-500 to-teal-500 hover:from-brand-600 hover:to-teal-600 text-slate-950 font-bold text-base shadow-lg transition-all">
+                        Envoyer le message
+                    </button>
+                </form>
+
+                <div id="form-success" class="hidden text-center py-8">
+                    <div class="w-16 h-16 bg-brand-500/20 text-brand-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Message bien reçu !</h3>
+                    <p class="text-slate-400">Merci, Noé vous recontactera très rapidement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 border-t border-slate-800 py-12 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div>
+                <p class="font-bold text-white">Mozé Dépannage Informatique</p>
+                <p class="text-xs text-slate-500">Noé Banchereau — Bac Pro CIEL (49610 Mozé-sur-Louet)</p>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://instagram.com" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="https://facebook.com" class="hover:text-white transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+            </div>
+            <p class="text-xs text-slate-500">&copy; 2026 Mozé Dépannage Informatique. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form Submit Simulation
+        const form = document.getElementById('contact-form');
+        const successMsg = document.getElementById('form-success');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            form.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
