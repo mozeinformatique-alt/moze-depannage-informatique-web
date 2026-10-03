@@ -5,535 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mozé Dépannage Informatique | Réparation, Réseau & Électronique (49610)</title>
     <meta name="description" content="Service professionnel de dépannage informatique, installation réseau et réparation électronique à domicile et en atelier à Mozé-sur-Louet et ses environs.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0f828a;
-            --primary-dark: #0a5c62;
-            --secondary: #2c3e50;
-            --light-bg: #f8fafc;
-            --white: #ffffff;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-            --radius: 8px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Top Bar */
-        .top-bar {
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 8px 0;
-            font-size: 0.875rem;
-        }
-
-        .top-bar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .top-bar-info span {
-            margin-right: 20px;
-        }
-
-        .top-bar-info i {
-            color: var(--primary);
-            margin-right: 6px;
-        }
-
-        /* Header & Nav */
-        header {
-            background: var(--white);
-            box-shadow: var(--shadow-sm);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-svg {
-            width: 48px;
-            height: 48px;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--secondary);
-            letter-spacing: -0.5px;
-            line-height: 1.2;
-        }
-
-        .logo-subtitle {
-            font-size: 0.75rem;
-            color: var(--primary);
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: var(--radius);
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-            cursor: pointer;
-            border: none;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            color: var(--white);
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .hero-title {
-            font-size: 2.75rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .hero-title span {
-            color: #22d3ee;
-        }
-
-        .hero-description {
-            font-size: 1.125rem;
-            color: #94a3b8;
-            margin-bottom: 30px;
-        }
-
-        .hero-badges {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 35px;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #e2e8f0;
-        }
-
-        .badge i {
-            color: #22d3ee;
-        }
-
-        .hero-card {
-            background: var(--white);
-            border-radius: calc(var(--radius) * 2);
-            padding: 35px;
-            color: var(--text-dark);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .hero-card h3 {
-            font-size: 1.4rem;
-            color: var(--secondary);
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        /* Services Grid */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-subtitle {
-            color: var(--primary);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-
-        .section-title {
-            font-size: 2.25rem;
-            color: var(--secondary);
-            font-weight: 700;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 35px 25px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s;
-            position: relative;
-            top: 0;
-        }
-
-        .service-card:hover {
-            top: -5px;
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(15, 130, 138, 0.1);
-            color: var(--primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 1.25rem;
-            color: var(--secondary);
-            margin-bottom: 12px;
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .service-list {
-            list-style: none;
-        }
-
-        .service-list li {
-            font-size: 0.9rem;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .service-list li i {
-            color: var(--primary);
-            font-size: 0.8rem;
-        }
-
-        /* Modes Intervention */
-        .intervention-section {
-            background: var(--white);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .intervention-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .intervention-box {
-            padding: 40px;
-            border-radius: var(--radius);
-            background: var(--light-bg);
-            border: 1px solid var(--border-color);
-            display: flex;
-            gap: 25px;
-        }
-
-        .intervention-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-        }
-
-        .intervention-content h3 {
-            font-size: 1.3rem;
-            color: var(--secondary);
-            margin-bottom: 10px;
-        }
-
-        .intervention-content p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Pricing & Estimate */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .price-card {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 30px;
-            text-align: center;
-        }
-
-        .price-card.featured {
-            border: 2px solid var(--primary);
-            position: relative;
-        }
-
-        .featured-tag {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: var(--white);
-            padding: 2px 12px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            border-radius: 10px;
-            text-transform: uppercase;
-        }
-
-        .price-title {
-            font-size: 1.1rem;
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .price-amount {
-            font-size: 2.25rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .price-amount span {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: var(--text-muted);
-        }
-
-        /* Zone & Contact */
-        .zone-box {
-            background: var(--secondary);
-            color: var(--white);
-            border-radius: var(--radius);
-            padding: 40px;
-            text-align: center;
-        }
-
-        .zone-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .zone-tag {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 6px 14px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-        }
-
-        /* Form */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            font-size: 0.95rem;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--secondary);
-            color: var(--white);
-            padding: 50px 0 20px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #94a3b8;
-        }
-
-        @media (max-width: 992px) {
-            .hero-grid, .services-grid, .intervention-grid, .pricing-grid, .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
 
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-info">
                 <span><i class="fa-solid fa-location-dot"></i> Mozé-sur-Louet & Rayon 20km (49610)</span>
-                <span><i class="fa-solid fa-clock"></i> Intervention à Domicile & Atelier</span>
+                <span class="status-badge"><span class="status-dot"></span> Intervention disponible aujourd'hui</span>
             </div>
             <div>
-                <a href="#contact" style="color: white; text-decoration: none; font-weight: 600;"><i class="fa-solid fa-envelope"></i> Demande de devis</a>
+                <a href="#contact" class="top-bar-link"><i class="fa-solid fa-envelope"></i> Demande de devis rapide</a>
             </div>
         </div>
     </div>
 
-    <!-- Header -->
+    <!-- Header & Navigation -->
     <header>
         <div class="container navbar">
             <a href="#" class="logo-container">
-                <!-- SVG Logo intégré fidèle aux couleurs -->
-                <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="15" y="20" width="70" height="45" rx="4" fill="#2C3E50" stroke="#2C3E50" stroke-width="2"/>
-                    <rect x="20" y="25" width="60" height="35" rx="2" fill="white"/>
-                    <path d="M10 70 L90 70 L80 80 L20 80 Z" fill="#0F828A"/>
-                    <!-- Engrenage central -->
-                    <circle cx="50" cy="42" r="12" stroke="#0F828A" stroke-width="4" fill="none"/>
-                    <path d="M50 26 L50 30 M50 54 L50 58 M34 42 L38 42 M62 42 L66 42" stroke="#0F828A" stroke-width="4" stroke-linecap="round"/>
-                    <!-- Clé / Flèche -->
-                    <path d="M45 42 L72 42" stroke="#0F828A" stroke-width="3"/>
-                </svg>
+                <img src="logo.png" alt="Mozé Dépannage Informatique" class="logo-img">
                 <div class="logo-text">
                     <span class="logo-title">MOZÉ DÉPANNAGE</span>
                     <span class="logo-subtitle">INFORMATIQUE</span>
@@ -544,55 +48,119 @@
                 <li><a href="#interventions">Modes d'intervention</a></li>
                 <li><a href="#tarifs">Tarifs</a></li>
                 <li><a href="#zone">Zone d'action</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
-            <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Contact Rapidité</a>
+            <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Contact Rapide</a>
+            
+            <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Ouvrir le menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-menu-overlay" id="mobile-overlay"></div>
+    <div class="mobile-menu" id="mobile-drawer">
+        <button class="mobile-menu-close" id="mobile-close-btn" aria-label="Fermer le menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="mobile-nav-links">
+            <li><a href="#services" class="mobile-link"><i class="fa-solid fa-laptop-medical"></i> Services</a></li>
+            <li><a href="#interventions" class="mobile-link"><i class="fa-solid fa-house-laptop"></i> Modes d'intervention</a></li>
+            <li><a href="#tarifs" class="mobile-link"><i class="fa-solid fa-tag"></i> Tarifs</a></li>
+            <li><a href="#zone" class="mobile-link"><i class="fa-solid fa-map-location-dot"></i> Zone d'action</a></li>
+            <li><a href="#faq" class="mobile-link"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+            <li><a href="#contact" class="mobile-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div>
+            <a href="#contact" class="btn btn-primary btn-block mobile-link"><i class="fa-solid fa-wrench"></i> Demander une Réparation</a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-grid">
-            <div>
-                <h1 class="hero-title">Dépannage Informatique & <span>Expertise Technique</span></h1>
-                <p class="hero-description">Services de réparation d'ordinateurs, optimisation réseau et maintenance électronique pour particuliers et professionnels à Mozé-sur-Louet et ses environs.</p>
+            <div class="reveal">
+                <div class="hero-tag">
+                    <i class="fa-solid fa-bolt"></i> Dépannage Informatique Rapide & Électronique
+                </div>
+                <h1 class="hero-title">
+                    Dépannage Informatique & <span class="gradient-text">Expertise Technique</span>
+                </h1>
+                <p class="hero-description">
+                    Services professionnels de réparation d'ordinateurs, installation réseau et maintenance électronique sur-mesure à domicile et en atelier à Mozé-sur-Louet et ses environs.
+                </p>
                 
                 <div class="hero-badges">
-                    <div class="badge"><i class="fa-solid fa-check-circle"></i> Intervention Rapide</div>
-                    <div class="badge"><i class="fa-solid fa-check-circle"></i> À Domicile / Atelier</div>
-                    <div class="badge"><i class="fa-solid fa-check-circle"></i> Devis Transparent</div>
+                    <div class="badge"><i class="fa-solid fa-circle-check"></i> Tarifs Fixes & Transparents</div>
+                    <div class="badge"><i class="fa-solid fa-bolt"></i> Intervention 24/48h</div>
+                    <div class="badge"><i class="fa-solid fa-shield-halved"></i> Devis Gratuit</div>
                 </div>
 
-                <div style="display: flex; gap: 15px;">
-                    <a href="#contact" class="btn btn-primary" style="padding: 12px 25px;"><i class="fa-solid fa-wrench"></i> Demander une Réparation</a>
-                    <a href="#services" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);"><i class="fa-solid fa-list"></i> Voir nos prestations</a>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary btn-large"><i class="fa-solid fa-wrench"></i> Demander une Réparation</a>
+                    <a href="#tarifs" class="btn btn-outline btn-large"><i class="fa-solid fa-tags"></i> Consulter les Tarifs</a>
                 </div>
             </div>
 
-            <div class="hero-card">
-                <h3><i class="fa-solid fa-calculator" style="color: var(--primary);"></i> Estimation Rapide</h3>
-                <form id="quick-estimate-form">
-                    <div class="form-group">
-                        <label>Type de besoin</label>
-                        <select class="form-control" id="service-type">
-                            <option value="40">Dépannage PC / Panne Système</option>
-                            <option value="45">Installation Réseau / Box Wi-Fi</option>
-                            <option value="50">Maintenance & Électronique</option>
-                            <option value="30">Nettoyage & Optimisation</option>
-                        </select>
+            <!-- Hero Card: Tarifs Simples & Prise de RDV -->
+            <div class="hero-card reveal delay-2">
+                <div class="hero-card-header">
+                    <h3><i class="fa-solid fa-shield-check"></i> Tarifs Transparents</h3>
+                    <p>Des prix simples et sans mauvaise surprise</p>
+                </div>
+
+                <div class="hero-price-summary">
+                    <div class="hero-price-item">
+                        <div class="hero-price-tag">10 €</div>
+                        <div class="hero-price-text">
+                            <strong>Déblocage Mot de Passe</strong>
+                            <span>Session Windows/Mac, BIOS, compte</span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Mode de prise en charge</label>
-                        <select class="form-control" id="location-type">
-                            <option value="0">En Atelier (Mozé-sur-Louet)</option>
-                            <option value="15">Intervention à Domicile (+ déplacement)</option>
-                        </select>
+                    <div class="hero-price-item featured">
+                        <div class="hero-price-tag">20 €</div>
+                        <div class="hero-price-text">
+                            <strong>Dépannage PC & Mac</strong>
+                            <span>Nettoyage, virus, réinstallation, logiciels</span>
+                        </div>
                     </div>
-                    <div style="background: var(--light-bg); padding: 15px; border-radius: var(--radius); text-align: center; margin-bottom: 20px;">
-                        <span style="font-size: 0.9rem; color: var(--text-muted);">Aperçu indicatif :</span>
-                        <div id="estimated-price" style="font-size: 1.8rem; font-weight: 800; color: var(--primary);">40,00 €</div>
+                    <div class="hero-price-item">
+                        <div class="hero-price-tag">30 €</div>
+                        <div class="hero-price-text">
+                            <strong>Électronique, Setup & Réseau</strong>
+                            <span>Soudures, installation complète, Wi-Fi mesh</span>
+                        </div>
                     </div>
-                    <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Prendre rendez-vous</a>
-                </form>
+                </div>
+
+                <a href="#contact" class="btn btn-primary btn-block btn-large" style="margin-top: 20px;">
+                    <i class="fa-solid fa-calendar-check"></i> Prendre Rendez-vous
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <section class="stats-strip">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div class="stat-item">
+                    <h4>100%</h4>
+                    <p>Devis Clair & Fixe</p>
+                </div>
+                <div class="stat-item">
+                    <h4>Dès 10 €</h4>
+                    <p>Tarifs Accessibles</p>
+                </div>
+                <div class="stat-item">
+                    <h4>24/48h</h4>
+                    <p>Intervention Rapide</p>
+                </div>
+                <div class="stat-item">
+                    <h4>+10 ans</h4>
+                    <p>Expérience Technique</p>
+                </div>
             </div>
         </div>
     </section>
@@ -600,48 +168,49 @@
     <!-- Services Section -->
     <section id="services" class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-subtitle">Nos Domaines d'Expertise</span>
                 <h2 class="section-title">Des solutions techniques sur-mesure</h2>
+                <p class="section-description">Une prise en charge complète adaptée aux pannes matérielles, équipements réseau et cartes électroniques.</p>
             </div>
 
             <div class="services-grid">
                 <!-- Service 1 -->
-                <div class="service-card">
+                <div class="service-card reveal delay-1">
                     <div class="service-icon"><i class="fa-solid fa-laptop-medical"></i></div>
-                    <h3>Informatique & PC</h3>
-                    <p>Diagnostique complet, réparation matérielle et logicielle pour ordinateurs portables et de bureau.</p>
+                    <h3>Informatique & PC / Mac</h3>
+                    <p>Diagnostic approfondi et réparation matérielle & logicielle sur ordinateurs portables et de bureau.</p>
                     <ul class="service-list">
-                        <li><i class="fa-solid fa-angle-right"></i> Suppressions de virus et malwares</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Remplacement composants (SSD, RAM)</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Reconfiguration Windows / Mac</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Sauvegarde et récupération données</li>
+                        <li><i class="fa-solid fa-check"></i> Déblocage de mots de passe & sessions</li>
+                        <li><i class="fa-solid fa-check"></i> Suppression de virus, malwares & spams</li>
+                        <li><i class="fa-solid fa-check"></i> Reconfiguration Windows / macOS</li>
+                        <li><i class="fa-solid fa-check"></i> Sauvegarde & récupération de données</li>
                     </ul>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="service-card">
+                <div class="service-card reveal delay-2">
                     <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
-                    <h3>Réseaux & Connectivité</h3>
-                    <p>Optimisation de vos équipements réseau pour une connexion stable et performante.</p>
+                    <h3>Réseaux & Bureautique</h3>
+                    <p>Installation de setups complets et optimisation de vos équipements réseau.</p>
                     <ul class="service-list">
-                        <li><i class="fa-solid fa-angle-right"></i> Configuration Box Internet & Wi-Fi</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Installation répéteurs & CPL</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Raccordement baies et câblage RJ45</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Connexion périphériques (Imprimantes, NAS)</li>
+                        <li><i class="fa-solid fa-check"></i> Installation setup bureautique complet</li>
+                        <li><i class="fa-solid fa-check"></i> Configuration Box Internet & Wi-Fi mesh</li>
+                        <li><i class="fa-solid fa-check"></i> Raccordement baies & câblage RJ45</li>
+                        <li><i class="fa-solid fa-check"></i> Connexion périphériques (Imprimantes, NAS)</li>
                     </ul>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="service-card">
+                <div class="service-card reveal delay-3">
                     <div class="service-icon"><i class="fa-solid fa-microchip"></i></div>
-                    <h3>Électronique & Maintenance</h3>
-                    <p>Prise en charge de pannes complexes nécessitant des interventions ciblées sur cartes électroniques.</p>
+                    <h3>Électronique & Soudures</h3>
+                    <p>Résolution de pannes complexes nécessitant des interventions en micro-soudures et électronique.</p>
                     <ul class="service-list">
-                        <li><i class="fa-solid fa-angle-right"></i> Diagnostics sur cartes électroniques</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Soudures de connecteurs & composants</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Maintenance préventive du matériel</li>
-                        <li><i class="fa-solid fa-angle-right"></i> Assemblage de systèmes spécifiques</li>
+                        <li><i class="fa-solid fa-check"></i> Réparations électroniques sur cartes mères</li>
+                        <li><i class="fa-solid fa-check"></i> Soudures de connecteurs & composants</li>
+                        <li><i class="fa-solid fa-check"></i> Maintenance préventive du matériel</li>
+                        <li><i class="fa-solid fa-check"></i> Assemblage de PC sur-mesure</li>
                     </ul>
                 </div>
             </div>
@@ -651,127 +220,221 @@
     <!-- Intervention Mode -->
     <section id="interventions" class="section intervention-section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Flexibilité</span>
+            <div class="section-header reveal">
+                <span class="section-subtitle">Modalités Souples</span>
                 <h2 class="section-title">Deux modes de prise en charge</h2>
             </div>
 
             <div class="intervention-grid">
-                <div class="intervention-box">
+                <div class="intervention-box reveal delay-1">
                     <div class="intervention-icon"><i class="fa-solid fa-house-user"></i></div>
                     <div class="intervention-content">
                         <h3>Intervention à Domicile</h3>
-                        <p>Inutile de tout débrancher. Déplacement directement chez vous sur Mozé-sur-Louet et les communes environnantes pour résoudre vos pannes sur place.</p>
+                        <p>Inutile de tout débrancher ! Déplacement directement chez vous sur Mozé-sur-Louet et les communes environnantes pour résoudre vos pannes sur place.</p>
+                        <div class="intervention-tags">
+                            <span class="intervention-tag">Sans débranchement</span>
+                            <span class="intervention-tag">Gain de temps</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="intervention-box">
+                <div class="intervention-box reveal delay-2">
                     <div class="intervention-icon"><i class="fa-solid fa-warehouse"></i></div>
                     <div class="intervention-content">
                         <h3>Dépôt en Atelier</h3>
-                        <p>Confiez votre matériel directement en atelier pour des interventions plus longues (tests approfondis, réinstallation système complète, soudures).</p>
+                        <p>Confiez votre matériel directement en atelier pour des interventions nécessitant des bancs d'essai avancés (tests approfondis, soudures, réinstallation complète).</p>
+                        <div class="intervention-tags">
+                            <span class="intervention-tag">Banc de test avancé</span>
+                            <span class="intervention-tag">Soudures & précision</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tarifs -->
+    <!-- Tarifs Mis à Jour selon vos consignes -->
     <section id="tarifs" class="section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Transparence</span>
-                <h2 class="section-title">Grille tarifaire indicative</h2>
+            <div class="section-header reveal">
+                <span class="section-subtitle">Grille Tarifaire Transparente</span>
+                <h2 class="section-title">Des tarifs simples et abordables</h2>
+                <p class="section-description">Aucune mauvaise surprise : des prix fixes pour chaque type de besoin.</p>
             </div>
 
             <div class="pricing-grid">
-                <div class="price-card">
-                    <div class="price-title">Diagnostic & Devis</div>
-                    <div class="price-amount">Gratuit <span>*</span></div>
-                    <p style="color: var(--text-muted); font-size: 0.875rem;">* Gratuit si la réparation est effectuée. Diagnostic simple sans engagement.</p>
+                <!-- Card 1: 10€ -->
+                <div class="price-card reveal delay-1">
+                    <div>
+                        <div class="price-title">Déblocage Express</div>
+                        <div class="price-amount">10 €</div>
+                        <p class="price-note">Déblocage de mot de passe (session Windows, Mac, BIOS, compte utilisateur) et petits réglages rapides.</p>
+                    </div>
+                    <a href="#contact" class="btn btn-outline btn-block">Choisir ce forfait</a>
                 </div>
 
-                <div class="price-card featured">
-                    <div class="featured-tag">Plus demandé</div>
-                    <div class="price-title">Dépannage Standard</div>
-                    <div class="price-amount">40 € <span>/ intervention</span></div>
-                    <p style="color: var(--text-muted); font-size: 0.875rem;">Nettoyage système, suppression de virus, configuration logicielle ou petit dépannage.</p>
+                <!-- Card 2: 20€ (Featured) -->
+                <div class="price-card featured reveal delay-2">
+                    <div class="featured-tag">Le + Demandé</div>
+                    <div>
+                        <div class="price-title">Dépannage Informatique</div>
+                        <div class="price-amount">20 €</div>
+                        <p class="price-note">Suppression de virus, nettoyage système, installation de logiciels, réinstallation Windows/Mac, optimisation générale.</p>
+                    </div>
+                    <a href="#contact" class="btn btn-primary btn-block">Choisir ce forfait</a>
                 </div>
 
-                <div class="price-card">
-                    <div class="price-title">Intervention Réseau / Spécifique</div>
-                    <div class="price-amount">50 € <span>/ prestation</span></div>
-                    <p style="color: var(--text-muted); font-size: 0.875rem;">Installation de matériel réseau, réinstallation complète, réparation électronique.</p>
+                <!-- Card 3: 30€ -->
+                <div class="price-card reveal delay-3">
+                    <div>
+                        <div class="price-title">Électronique & Setup</div>
+                        <div class="price-amount">30 €</div>
+                        <p class="price-note">Grosses réparations électroniques, micro-soudures, installation complète de setup bureautique, configuration réseau avancée.</p>
+                    </div>
+                    <a href="#contact" class="btn btn-outline btn-block">Choisir ce forfait</a>
+                </div>
+
+                <!-- Card 4: Gratuit -->
+                <div class="price-card reveal delay-4">
+                    <div>
+                        <div class="price-title">Diagnostic & Devis</div>
+                        <div class="price-amount">Gratuit <span>*</span></div>
+                        <p class="price-note">* Diagnostic entièrement gratuit pour toute prestation réalisée. Recherche de panne rapide et sans engagement.</p>
+                    </div>
+                    <a href="#contact" class="btn btn-outline btn-block">Demander un devis</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Zone d'action -->
-    <section id="zone" class="section" style="padding-top: 0;">
+    <!-- Zone d'action avec filtre rapide -->
+    <section id="zone" class="section">
         <div class="container">
-            <div class="zone-box">
-                <h2 style="font-size: 1.8rem; margin-bottom: 10px;">Zone d'Intervention Principale</h2>
-                <p style="color: #cbd5e1;">Déplacements assurés dans un rayon de 15 à 20 km autour de Mozé-sur-Louet (49610)</p>
+            <div class="zone-box reveal">
+                <h2 class="zone-title">Zone d'Intervention Principale</h2>
+                <p class="zone-description">Déplacements assurés dans un rayon de 15 à 20 km autour de Mozé-sur-Louet (49610)</p>
                 
-                <div class="zone-tags">
-                    <span class="zone-tag">Mozé-sur-Louet</span>
-                    <span class="zone-tag">Soulaines-sur-Aubance</span>
-                    <span class="zone-tag">Mûrs-Erigné</span>
-                    <span class="zone-tag">Brissac-Loire-Aubance</span>
-                    <span class="zone-tag">Saint-Melaine-sur-Aubance</span>
-                    <span class="zone-tag">Denée</span>
-                    <span class="zone-tag">Rochefort-sur-Loire</span>
-                    <span class="zone-tag">Les Garennes sur Loire</span>
-                    <span class="zone-tag">Les Ponts-de-Cé</span>
+                <div class="search-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="city-search" class="search-input" placeholder="Rechercher votre commune (ex: Mûrs-Erigné, Brissac...)" aria-label="Rechercher une ville">
+                </div>
+
+                <div class="zone-tags" id="zone-tags-container">
+                    <span class="zone-tag"><i class="fa-solid fa-check"></i> Mozé-sur-Louet</span>
+                    <span class="zone-tag"><i class="fa-solid fa-check"></i> Soulaines-sur-Aubance</span>
+                    <span class="zone-tag"><i class="fa-solid fa-check"></i> Mûrs-Erigné</span>
+                    <span class="zone-tag"><i class="fa-solid fa-check"></i> Brissac-Loire-Aubance</span>
+                    <span class="zone-tag"><i class="fa-solid fa-check"></i> Saint-Melaine-sur-Aubance</span>
+                    <span class="zone-tag"><i class="fa-solid fa-check"></i> Denée</span>
+                    <span class="zone-tag"><i class="fa-solid fa-check"></i> Rochefort-sur-Loire</span>
+                    <span class="zone-tag"><i class="fa-solid fa-check"></i> Les Garennes sur Loire</span>
+                    <span class="zone-tag"><i class="fa-solid fa-check"></i> Les Ponts-de-Cé</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ Accordéon -->
+    <section id="faq" class="section faq-section">
+        <div class="container container-narrow">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Des questions ?</span>
+                <h2 class="section-title">Foire Aux Questions</h2>
+                <p class="section-description">Retrouvez les réponses aux questions les plus fréquentes.</p>
+            </div>
+
+            <div class="faq-accordion reveal delay-1">
+                <div class="faq-item active">
+                    <button class="faq-header">
+                        <span>Comment se déroule la prise de rendez-vous ?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-body">
+                        <p>Remplissez simplement le formulaire de contact ou appelez-nous. Nous évaluons vos besoins par téléphone et convenons d'un créneau d'intervention à votre domicile ou du dépôt de votre appareil en atelier.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>Mes données personnelles sont-elles en sécurité ?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-body">
+                        <p>Absolument. Vos fichiers et documents confidentiels sont strictly préservés. Nous effectuons des sauvegardes sécurisées avant toute opération majeure si nécessaire.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>Comment s'appliquent les tarifs (10 €, 20 €, 30 €) ?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-body">
+                        <p>Nos tarifs sont fixes et transparents : 10 € pour un déblocage de mot de passe, 20 € pour tout dépannage classique (virus, réinstallation, nettoyage), et 30 € pour les grosses interventions (réparations électroniques/soudures, installation de setup complet bureautique, réseau). Aucun frais caché !</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>Quels sont les moyens de paiement acceptés ?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-body">
+                        <p>Nous acceptons les paiements par chèque, espèces ou virement bancaire. Une facture détaillée vous est remise à la fin de la prestation.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section" style="background: var(--white); border-top: 1px solid var(--border-color);">
-        <div class="container" style="max-width: 800px;">
-            <div class="section-header">
-                <span class="section-subtitle">Formulaire de Contact</span>
+    <section id="contact" class="section contact-section">
+        <div class="container container-narrow">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Prise de contact</span>
                 <h2 class="section-title">Demander une prise en charge</h2>
+                <p class="section-description">Décrivez votre demande pour recevoir un retour rapide et un créneau d'intervention.</p>
             </div>
 
-            <form id="contact-form">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div class="form-group">
-                        <label>Nom & Prénom</label>
-                        <input type="text" class="form-control" required placeholder="Ex: Jean Dupont">
+            <div class="contact-form-container reveal delay-1">
+                <form id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="client-name">Nom & Prénom</label>
+                            <input type="text" id="client-name" class="form-control" required placeholder="Ex: Jean Dupont">
+                        </div>
+                        <div class="form-group">
+                            <label for="client-phone">Téléphone</label>
+                            <input type="tel" id="client-phone" class="form-control" required placeholder="Ex: 06 00 00 00 00">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Numéro de Téléphone</label>
-                        <input type="tel" class="form-control" required placeholder="Ex: 06 00 00 00 00">
-                    </div>
-                </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div class="form-group">
-                        <label>Ville</label>
-                        <input type="text" class="form-control" placeholder="Ex: Mozé-sur-Louet">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="client-city">Ville</label>
+                            <input type="text" id="client-city" class="form-control" placeholder="Ex: Mozé-sur-Louet">
+                        </div>
+                        <div class="form-group">
+                            <label for="client-service">Type de prestation</label>
+                            <select id="client-service" class="form-control">
+                                <option>Déblocage mot de passe (10 €)</option>
+                                <option>Dépannage PC / Mac (20 €)</option>
+                                <option>Électronique, Setup & Réseau (30 €)</option>
+                                <option>Autre demande sur-mesure</option>
+                            </select>
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        <label>Type de prestation</label>
-                        <select class="form-control">
-                            <option>Dépannage PC / Mac</option>
-                            <option>Problème Réseau / Wi-Fi</option>
-                            <option>Réparation Électronique</option>
-                            <option>Autre demande</option>
-                        </select>
+                        <label for="client-message">Description du problème</label>
+                        <textarea id="client-message" class="form-control" rows="5" placeholder="Décrivez succinctement les symptômes de la panne ou votre besoin..."></textarea>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label>Description du problème</label>
-                    <textarea class="form-control" rows="5" placeholder="Décrivez succinctement les symptômes de la panne ou votre besoin..."></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 14px;"><i class="fa-solid fa-paper-plane"></i> Envoyer la demande</button>
-            </form>
+                    <button type="submit" class="btn btn-primary btn-block btn-large">
+                        <i class="fa-solid fa-paper-plane"></i> Envoyer la demande
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -780,20 +443,34 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div style="font-weight: 700; font-size: 1.2rem; margin-bottom: 15px; color: var(--white);">MOZÉ DÉPANNAGE INFORMATIQUE</div>
-                    <p style="color: #94a3b8; font-size: 0.9rem; max-width: 400px;">Services professionnels de dépannage, maintenance réseau et interventions électroniques sur-mesure dans le Maine-et-Loire.</p>
+                    <div class="footer-brand">MOZÉ DÉPANNAGE INFORMATIQUE</div>
+                    <p class="footer-description">Services professionnels de dépannage informatique, maintenance réseau et interventions électroniques sur-mesure dans le Maine-et-Loire.</p>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 15px; font-size: 1rem;">Services</h4>
-                    <ul style="list-style: none; font-size: 0.875rem; color: #94a3b8;">
-                        <li style="margin-bottom: 8px;">Dépannage PC</li>
-                        <li style="margin-bottom: 8px;">Installation Réseau</li>
-                        <li style="margin-bottom: 8px;">Micro-soudures</li>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#interventions">Interventions</a></li>
+                        <li><a href="#tarifs">Tarifs</a></li>
+                        <li><a href="#zone">Zone d'action</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 15px; font-size: 1rem;">Localisation</h4>
-                    <p style="font-size: 0.875rem; color: #94a3b8;">49610 Mozé-sur-Louet<br>Interventions sur site & atelier</p>
+                    <h4 class="footer-title">Nos Tarifs</h4>
+                    <ul class="footer-links">
+                        <li><a href="#tarifs">Déblocage Mot de passe (10 €)</a></li>
+                        <li><a href="#tarifs">Dépannage PC/Mac (20 €)</a></li>
+                        <li><a href="#tarifs">Électronique & Setup (30 €)</a></li>
+                        <li><a href="#tarifs">Diagnostic (Gratuit*)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Localisation</h4>
+                    <div class="footer-contact-info">
+                        <p><i class="fa-solid fa-location-dot"></i> 49610 Mozé-sur-Louet</p>
+                        <p><i class="fa-solid fa-clock"></i> Intervention Domicile & Atelier</p>
+                        <p><i class="fa-solid fa-shield-halved"></i> Devis gratuit & clair</p>
+                    </div>
                 </div>
             </div>
 
@@ -803,28 +480,7 @@
         </div>
     </footer>
 
-    <script>
-        // Interactive price estimator logic
-        const serviceSelect = document.getElementById('service-type');
-        const locationSelect = document.getElementById('location-type');
-        const priceDisplay = document.getElementById('estimated-price');
-
-        function updatePrice() {
-            const basePrice = parseInt(serviceSelect.value);
-            const extraPrice = parseInt(locationSelect.value);
-            const total = basePrice + extraPrice;
-            priceDisplay.textContent = total.toFixed(2).replace('.', ',') + ' €';
-        }
-
-        serviceSelect.addEventListener('change', updatePrice);
-        locationSelect.addEventListener('change', updatePrice);
-
-        // Simple form handling simulation
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Votre demande a bien été envoyée ! Une réponse vous sera apportée rapidement.');
-            this.reset();
-        });
-    </script>
+    <!-- JavaScript Application Logic -->
+    <script src="script.js"></script>
 </body>
 </html>
