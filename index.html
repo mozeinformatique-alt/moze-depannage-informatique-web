@@ -146,17 +146,25 @@ footer .foot-links a:hover{color:var(--teal2)}
 .mob-nav a{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-radius:14px;font-size:15px;font-weight:600;color:var(--navy);transition:background .2s}
 .mob-nav a:active,.mob-nav a:hover{background:var(--soft);color:var(--teal2)}
 .mob-nav a svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.btn-text-short{display:none}
 @media(max-width:768px){
   .bar ul{display:none}
   .burger-btn{display:inline-flex}
-  .bar{gap:10px;padding:6px 8px 6px 14px}
-  .bar .btn.teal{padding:9px 15px;font-size:13.5px}
+  .btn-text-full{display:none}
+  .btn-text-short{display:inline}
+  .bar{gap:8px;padding:5px 6px 5px 12px}
+  .bar .btn.teal{padding:8px 14px;font-size:13px}
   .c-box{width:100%;justify-content:center}
+  .logo{gap:8px;font-size:15px}
+  .logo img{width:32px}
+  .logo small{display:block!important;font-size:9.5px;letter-spacing:0}
 }
-@media(max-width:440px){
-  .logo small{display:none}
-  .logo{font-size:15px}
-  .bar .btn.teal{padding:8px 12px;font-size:12.5px}
+@media(max-width:380px){
+  .bar{gap:6px;padding:4px 4px 4px 8px}
+  .bar .btn.teal{padding:7px 10px;font-size:12px}
+  .logo{gap:6px;font-size:14px}
+  .logo img{width:28px}
+  .logo small{font-size:8.5px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -167,7 +175,7 @@ footer .foot-links a:hover{color:var(--teal2)}
     <a class="logo" href="#top"><img src="logo.png" alt=""><span>Noé<small>Dépannage Informatique Mozé</small></span></a>
     <ul><li><a href="#services">Services</a></li><li><a href="#methode">Méthode</a></li><li><a href="#tarifs">Tarifs</a></li><li><a href="#contact">Coordonnées</a></li></ul>
     <a class="acc" href="#espace" aria-label="Mon espace"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><b id="cnt" hidden>0</b></a>
-    <a class="btn teal" href="#demande">Demander de l'aide</a>
+    <a class="btn teal" href="#demande"><span class="btn-text-full">Demander de l'aide</span><span class="btn-text-short">Demander</span></a>
     <button class="burger-btn" id="burgerBtn" type="button" aria-label="Menu de navigation" aria-expanded="false">
       <svg class="b-ic" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       <svg class="c-ic" viewBox="0 0 24 24"><path d="M6 6l12 12M6 18L18 6"/></svg>
