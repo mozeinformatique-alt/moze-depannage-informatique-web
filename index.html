@@ -135,17 +135,51 @@ footer{padding:34px 22px calc(34px + env(safe-area-inset-bottom,0px));text-align
 footer .foot-links{display:flex;justify-content:center;gap:20px;margin-bottom:14px;flex-wrap:wrap;font-weight:600;font-size:14px}
 footer .foot-links a{color:var(--text);transition:color .2s}
 footer .foot-links a:hover{color:var(--teal2)}
-@media(max-width:700px){.bar ul{display:none}.bar{gap:12px}.c-box{width:100%;justify-content:center}}
+/* Bouton burger et menu mobile */
+.burger-btn{display:none;align-items:center;justify-content:center;background:none;border:0;padding:6px;cursor:pointer;color:var(--navy);border-radius:10px}
+.burger-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;display:block}
+.burger-btn .c-ic{display:none}
+.burger-btn.open .b-ic{display:none}
+.burger-btn.open .c-ic{display:block}
+.mob-nav{display:none;position:absolute;top:calc(100% + 8px);left:14px;right:14px;max-width:400px;margin:auto;background:rgba(255,255,255,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:20px;padding:8px;box-shadow:0 14px 35px -10px rgba(39,56,77,.25);list-style:none;flex-direction:column;gap:3px;z-index:40}
+.mob-nav.open{display:flex;animation:rise .25s both}
+.mob-nav a{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-radius:14px;font-size:15px;font-weight:600;color:var(--navy);transition:background .2s}
+.mob-nav a:active,.mob-nav a:hover{background:var(--soft);color:var(--teal2)}
+.mob-nav a svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+@media(max-width:768px){
+  .bar ul{display:none}
+  .burger-btn{display:inline-flex}
+  .bar{gap:10px;padding:6px 8px 6px 14px}
+  .bar .btn.teal{padding:9px 15px;font-size:13.5px}
+  .c-box{width:100%;justify-content:center}
+}
+@media(max-width:440px){
+  .logo small{display:none}
+  .logo{font-size:15px}
+  .bar .btn.teal{padding:8px 12px;font-size:12.5px}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<nav><div class="bar">
-  <a class="logo" href="#top"><img src="logo.png" alt=""><span>Noé<small>Dépannage Informatique Mozé</small></span></a>
-  <ul><li><a href="#services">Services</a></li><li><a href="#methode">Méthode</a></li><li><a href="#tarifs">Tarifs</a></li><li><a href="#contact">Coordonnées</a></li></ul>
-  <a class="acc" href="#espace" aria-label="Mon espace"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><b id="cnt" hidden>0</b></a>
-  <a class="btn teal" href="#demande">Demander de l'aide</a>
-</div></nav>
+<nav>
+  <div class="bar">
+    <a class="logo" href="#top"><img src="logo.png" alt=""><span>Noé<small>Dépannage Informatique Mozé</small></span></a>
+    <ul><li><a href="#services">Services</a></li><li><a href="#methode">Méthode</a></li><li><a href="#tarifs">Tarifs</a></li><li><a href="#contact">Coordonnées</a></li></ul>
+    <a class="acc" href="#espace" aria-label="Mon espace"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><b id="cnt" hidden>0</b></a>
+    <a class="btn teal" href="#demande">Demander de l'aide</a>
+    <button class="burger-btn" id="burgerBtn" type="button" aria-label="Menu de navigation" aria-expanded="false">
+      <svg class="b-ic" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="c-ic" viewBox="0 0 24 24"><path d="M6 6l12 12M6 18L18 6"/></svg>
+    </button>
+  </div>
+  <div class="mob-nav" id="mobNav">
+    <a href="#services"><span>Services</span><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></a>
+    <a href="#methode"><span>Méthode</span><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></a>
+    <a href="#tarifs"><span>Tarifs</span><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></a>
+    <a href="#contact"><span>Coordonnées</span><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></a>
+  </div>
+</nav>
 
 <main id="top">
 <header class="hero">
@@ -269,6 +303,27 @@ footer .foot-links a:hover{color:var(--teal2)}
 
 <script>
 var $=function(s,r){return(r||document).querySelector(s)};
+/* Menu mobile */
+(function(){
+  var b=$('#burgerBtn'),m=$('#mobNav');
+  if(!b||!m)return;
+  function toggle(o){
+    var open=typeof o==='boolean'?o:!m.classList.contains('open');
+    m.classList.toggle('open',open);
+    b.classList.toggle('open',open);
+    b.setAttribute('aria-expanded',open);
+  }
+  b.onclick=function(e){e.stopPropagation();toggle()};
+  m.querySelectorAll('a').forEach(function(a){
+    a.onclick=function(){toggle(false)};
+  });
+  document.addEventListener('click',function(e){
+    if(!m.contains(e.target)&&!b.contains(e.target))toggle(false);
+  });
+  addEventListener('keydown',function(e){
+    if(e.key=='Escape')toggle(false);
+  });
+})();
 /* Sélecteurs segmentés */
 document.querySelectorAll('.seg').forEach(function(g){
   var b=[].slice.call(g.querySelectorAll('button')),t=$('.thumb',g);
